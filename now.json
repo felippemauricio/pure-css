@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "name": "pure-css",
+  "alias": ["felippemauricio-pure-css.now.sh"],
+  "builds": [
+    { "src": "*.html", "use": "@now/static" }
+  ],
+  "github": {
+    "enabled": true,
+    "autoAlias": true
+  }
+}
