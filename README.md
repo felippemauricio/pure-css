@@ -1,4 +1,5 @@
 # Pure Css Components
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/felippemauricio/pure-css/blob/master/LICENSE.md)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/felippemauricio/pure-css/pulls)
 
 A set of common UI Components using the power of CSS + HTML and without Javascript.
