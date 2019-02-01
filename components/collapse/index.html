@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <style>
+      .collapse-list {
+        list-style: none;
+        margin-bottom: 0;
+        padding-left: 0;
+      }
+      .collapse-open {
+        display: none;
+      }
+      .collapse-painel {
+        max-height: 0;
+        opacity: 0;
+        transition: max-height .1s, visibility .3s, opacity .3s;
+        visibility: hidden;
+      }
+      .collapse-open:checked ~ .collapse-painel {
+        max-height: 100%;
+        opacity: 100;
+        visibility: visible;
+      }
+      .collapse-list li {
+        margin-bottom: 10px;
+      }
+      .collapse-list .collapse-btn {
+        background: #e8e8e8;
+        border: #eaeaea solid 1px;
+        border-radius: 2px;
+        cursor: pointer;
+        display: block;
+        padding: 5px 10px;
+      }
+      .collapse-list .collapse-btn:hover {
+        background: #eaeaea;
+      }
+      .collapse-list .collapse-inner {
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- Collapse -->
+    <div class="collapse">
+      <ul class="collapse-list">
+        <li>
+          <label class="collapse-btn" for="collapse-1">Rio de Janeiro</label>
+          <input class="collapse-open" type="checkbox" id="collapse-1"  aria-hidden="true" hidden />
+          <div class="collapse-painel">
+            <div class="collapse-inner">
+              <p><strong>Rio de Janeiro</strong> or simply Rio, is the second-most populous municipality in Brazil and the sixth-most populous in the Americas.</p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <label class="collapse-btn" for="collapse-2">Paris</label>
+          <input class="collapse-open" type="checkbox" id="collapse-2" aria-hidden="true" hidden />
+          <div class="collapse-painel">
+            <div class="collapse-inner">
+              <p><strong>Paris</strong> is the capital and most populous city of France.</p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <label class="collapse-btn" for="collapse-3">London</label>
+          <input class="collapse-open" type="checkbox" id="collapse-3" aria-hidden="true" hidden />
+          <div class="collapse-painel">
+            <div class="collapse-inner">
+              <p><strong>London</strong> is the capital and largest city of the United Kingdom.</p>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+
+
+  </body>
+</html>
