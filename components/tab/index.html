@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <style>
+      .tab {
+        position: relative;
+      }
+      .tab-painel {
+        display: inline-block;
+        min-height: 150px;
+      }
+      .tab-painel .tab-open {
+        border: 0;
+        clip: rect(0, 0, 0, 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+      }
+      .tab-nav {
+        border: #aaa solid 1px;
+        cursor: pointer;
+        display: inline-block;
+        font-size: 1.4rem;
+        margin-right: 20px;
+        padding: 10px 20px;
+      }
+      .tab-open,
+      .tab-nav:hover,
+      .tab-open:checked ~ .tab-nav {
+        background-color: #eaeaea;
+      }
+      .tab-inner {
+        left: 0;
+        margin-top: 20px;
+        opacity: 0;
+        position: absolute;
+        transition: opacity .1s;
+        visibility: hidden;
+      }
+      .tab-open:focus:checked ~ .tab-nav {
+        outline: thin dotted;
+      }
+      .tab-open:checked ~ .tab-inner {
+        opacity: 100;
+        visibility: visible;
+        transition: opacity .6s ease;
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- Tab -->
+    <div class="tab">
+      <div class="tab-painel">
+        <input class="tab-open" id="tab-1" name="tab-wrap-1" type="radio" checked />
+        <label class="tab-nav" for="tab-1">Brazil</label>
+        <div class="tab-inner">
+          <p><strong>Brazil</strong>, officially the Federative Republic of Brazil is the largest country in both South America and Latin America.</p>
+        </div>
+      </div>
+      <div class="tab-painel">
+        <input class="tab-open" id="tab-2" name="tab-wrap-1" type="radio" />
+        <label class="tab-nav" for="tab-2">Argentina</label>
+        <div class="tab-inner">
+          <p><strong>Argentina</strong>, officially named the Argentine Republica, is a country located mostly in the southern half of South America.</p>
+        </div>
+      </div>
+      <div class="tab-painel">
+        <input class="tab-open" id="tab-3" name="tab-wrap-1" type="radio" />
+        <label class="tab-nav" for="tab-3">Uruguay</label>
+        <div class="tab-inner">
+          <p><strong>Uruguay</strong>, officially the Oriental Republic of Uruguay, is a country in the southeastern region of South America.</p>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>
