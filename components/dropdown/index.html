@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <style>
+      .btn {
+        background: #fff;
+        border: #555 solid 1px;
+        border-radius: 3px;
+        cursor: pointer;
+        display: inline-block;
+        font-size: 1.4rem;
+        padding: 8px 15px;
+        min-width: 60px;
+        position: relative;
+        text-align: center;
+        text-decoration: none;
+      }
+      .btn-dropdown {
+        z-index: 2;
+      }
+      .btn-dropdown:after {
+        content:' ▼';
+      }
+      .dropdown {
+        display: inline-block;
+      }
+      .dropdown-overlay {
+        bottom: 0;
+        display: none;
+        left: 0;
+        position: fixed;
+        right: 0;
+        top: 0;
+        z-index: 1;
+      }
+      .dropdown-inner {
+        background: #fff;
+        border: #aaa solid 1px;
+        border-radius: 3px;
+        opacity: 0;
+        padding: 20px;
+        position: absolute;
+        transition: opacity .3s, visibility .3s;
+        visibility: hidden;
+        z-index: 2;
+      }
+      .dropdown-hover:hover .dropdown-inner,
+      .dropdown-open:checked ~ .dropdown-inner {
+        opacity: 100;
+        visibility: visible;
+      }
+      .dropdown-hover:hover .dropdown-overlay,
+      .dropdown-open:checked ~ .dropdown-overlay {
+        display: block;
+      }
+      .nav-list {
+        margin: 0;
+        padding: 0;
+      }
+      .nav-list li {
+        display: block;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- Dropdown -->
+    <div class="dropdown">
+      <label for="dropdown-1" class="btn btn-dropdown">La Liga</label>
+      <input class="dropdown-open" type="checkbox" id="dropdown-1" aria-hidden="true" hidden />
+      <label for="dropdown-1" class="dropdown-overlay"></label>
+      <div class="dropdown-inner">
+        <ul class="nav-list">
+          <li class="btn">
+            <p>Barcelona</p>
+          </li>
+          <li class="btn">
+            <p>Real Madrid</p>
+          </li>
+          <li class="btn">
+            <p>Atlético Madrid</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  </body>
+</html>
