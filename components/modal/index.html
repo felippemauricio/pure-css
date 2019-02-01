@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <style>
+      .btn {
+        background: #fff;
+        border: #555 solid 1px;
+        border-radius: 3px;
+        cursor: pointer;
+        display: inline-block;
+        font-size: 1.4rem;
+        padding: 8px 15px;
+        min-width: 60px;
+        position: relative;
+        text-align: center;
+        text-decoration: none;
+      }
+      .btn-primary {
+        background: #428bca;
+        border-color: #3885c7;
+        color: #fff;
+      }
+      .modal .btn-close {
+        color:  #aaa;
+        cursor: pointer;
+        font-size: 3rem;
+        position: absolute;
+        right: 15px;
+        text-decoration: none;
+        top: 0;
+      }
+      .modal .btn-close:hover,
+      .modal .btn-close:focus {
+        color: #999;
+      }
+      .modal-wrap:before {
+        background: rgba(0,0,0,0.6);
+        bottom: 0;
+        content: '';
+        display: none;
+        left: 0;
+        position: fixed;
+        right: 0;
+        top: 0;
+        z-index: 101;
+      }
+      .modal-overlay {
+        bottom: 0;
+        display: none;
+        left: 0;
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 102;
+      }
+      .modal-open:checked ~ .modal-wrap:before,
+      .modal-open:checked ~ .modal-wrap .modal-overlay {
+        display: block;
+      }
+      .modal-open:checked ~ .modal-wrap .modal-dialog {
+        position: fixed;
+        top: 40%;
+        transform: translate(-50%,-50%);
+      }
+      .modal-dialog {
+        background: #fefefe;
+        border: #555 solid 1px;
+        border-radius: 5px;
+        left: 50%;
+        max-width: 600px;
+        position: fixed;
+        top: -100%;
+        transform: translate(-50%,-150%);
+        transition: transform .6s ease-in-out;
+        width: 80%;
+        z-index: 103;
+      }
+      .modal-body {
+        padding: 20px;
+      }
+      .modal-body p {
+        margin: 0;
+      }
+      .modal-header,
+      .modal-footer {
+        padding: 20px 20px;
+      }
+      .modal-header {
+        border-bottom: #eaeaea solid 1px;
+      }
+      .modal-header h2 {
+        font-size: 2rem;
+        margin: 0;
+      }
+      .modal-footer {
+        border-top: #eaeaea solid 1px;
+        text-align: right;
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- Btn -->
+    <label class="btn" for="modal-one">Open Modal</label>
+
+    <!-- Modal One -->
+    <div class="modal">
+      <input class="modal-open" id="modal-one" type="checkbox" hidden />
+      <div class="modal-wrap" aria-hidden="true" role="dialog">
+        <label class="modal-overlay" for="modal-one"></label>
+        <div class="modal-dialog">
+          <div class="modal-header">
+            <h2>Modal in CSS?</h2>
+            <label class="btn-close" for="modal-one" aria-hidden="true">×</label>
+          </div>
+          <div class="modal-body">
+            <p>Yes, it`s possible!</p>
+          </div>
+          <div class="modal-footer">
+            <label class="btn btn-primary" for="modal-one">Close</label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>
