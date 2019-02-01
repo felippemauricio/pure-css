@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <style>
+      body {
+        padding: 50px;
+      }
+      .btn {
+        background: #fff;
+        border: #555 solid 1px;
+        border-radius: 3px;
+        color: #000;
+        cursor: pointer;
+        display: inline-block;
+        font-size: 1.4rem;
+        padding: 8px 15px;
+        min-width: 60px;
+        position: relative;
+        text-align: center;
+        text-decoration: none;
+      }
+      [class*="tooltip"] {
+        position: relative;
+        text-decoration: none;
+      }
+      [class*="tooltip"]:after,
+      [class*="tooltip"]:before {
+        position: absolute;
+        opacity: 0;
+        z-index: 100;
+      }
+      [class*="tooltip"]:after {
+        background: #222;
+        border-radius: 4px;
+        box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
+        color: #fff;
+        content: attr(aria-label);
+        font-size: 1.2rem;
+        height: 25px;
+        line-height: 25px;
+        padding: 0 10px;
+        text-align: center;
+        text-shadow: 0 0 5px #000;
+        white-space: nowrap;
+      }
+      [class*="tooltip"]:before {
+        border-style: solid;
+        border-width: 6px;
+        content: '';
+        width: 0;
+        height: 0;
+      }
+      [class*="tooltip"]:hover:after,
+      [class*="tooltip"]:focus:after,
+      [class*="tooltip"]:hover:before,
+      [class*="tooltip"]:focus:before {
+        opacity: 1;
+      }
+      .tooltip-top:after,
+      .tooltip-top:before {
+        bottom: 90%;
+        left: -9999px;
+        margin-bottom: 12px;
+        transition: bottom .25s ease-in-out;
+      }
+      .tooltip-top:before {
+        border-color: #222 transparent transparent transparent;
+        margin-bottom: 0;
+      }
+      .tooltip-top:hover:after,
+      .tooltip-top:focus:after,
+      .tooltip-top:hover:before,
+      .tooltip-top:focus:before {
+        bottom: 85%;
+        left: 0;
+      }
+      .tooltip-top:hover:before,
+      .tooltip-top:focus:before {
+        left: 15px;
+      }
+      .tooltip-bottom:after,
+      .tooltip-bottom:before {
+        left: -9999px;
+        margin-top: 12px;
+        transition: top .25s ease-in-out;
+        top: 90%;
+      }
+      .tooltip-bottom:before {
+        border-color: transparent transparent #222 transparent;
+        margin-top: 0;
+      }
+      .tooltip-bottom:hover:after,
+      .tooltip-bottom:focus:after,
+      .tooltip-bottom:hover:before,
+      .tooltip-bottom:focus:before {
+        left: 0;
+        top: 85%;
+      }
+      .tooltip-bottom:hover:before,
+      .tooltip-bottom:focus:before {
+        left: 15px;
+      }
+      .tooltip-right:after,
+      .tooltip-right:before {
+        left: 96%;
+        margin-left: 12px;
+        transition: left .25s ease-in-out;
+        top: -9999px;
+      }
+      .tooltip-right:before {
+        border-color: transparent #222 transparent transparent;
+        margin-left: 0;
+      }
+      .tooltip-right:hover:after,
+      .tooltip-right:focus:after,
+      .tooltip-right:hover:before,
+      .tooltip-right:focus:before {
+        left: 95%;
+        top: 0;
+      }
+      .tooltip-right:hover:before,
+      .tooltip-right:focus:before {
+        top: 7px;
+      }
+      .tooltip-left:after,
+      .tooltip-left:before {
+        margin-right: 12px;
+        right: 96%;
+        transition: right .25s ease-in-out;
+        top: -9999px;
+      }
+      .tooltip-left:before {
+        border-color: transparent transparent transparent #222;
+        margin-right: 0;
+      }
+      .tooltip-left:hover:after,
+      .tooltip-left:focus:after,
+      .tooltip-left:hover:before,
+      .tooltip-left:focus:before {
+        right: 95%;
+        top: 0;
+      }
+      .tooltip-left:hover:before,
+      .tooltip-left:focus:before {
+        top: 7px;
+      }
+      [class*="tooltip"]:after,
+      [class*="tooltip"]:before {
+        transition: opacity .25s ease-in-out;
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- Tooltip -->
+    <a href="#component-tooltip" role="tooltip" class="tooltip-top btn" aria-label="content displayed over ">Top</a>
+    <a href="#component-tooltip" role="tooltip" class="tooltip-right btn" aria-label="content displayed to the right">Right</a>
+    <a href="#component-tooltip" role="tooltip" class="tooltip-bottom btn" aria-label="content displayed below ">Bottom</a>
+    <a href="#component-tooltip" role="tooltip" class="tooltip-left btn" aria-label="content displayed to the left ">Left</a>
+  
+  </body>
+</html>
